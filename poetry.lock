@@ -79,6 +79,10 @@ pygments = "*"
 setuptools = ">=18.5"
 traitlets = ">=4.2"
 
+[package.dependencies.win-unicode-console]
+python = "<3.6"
+version = ">=0.5"
+
 [[package]]
 category = "dev"
 description = "Vestigial utilities from IPython"
@@ -131,7 +135,7 @@ python-versions = "*"
 version = "0.7.5"
 
 [[package]]
-category = "main"
+category = "dev"
 description = "Python Imaging Library (Fork)"
 name = "pillow"
 optional = false
@@ -201,9 +205,18 @@ optional = false
 python-versions = "*"
 version = "0.1.7"
 
+[[package]]
+category = "dev"
+description = "Enable Unicode input and display when running Python from Windows console."
+marker = "sys_platform == \"win32\" and python_version < \"3.6\" and python_version >= \"3.4\""
+name = "win-unicode-console"
+optional = false
+python-versions = "*"
+version = "0.5"
+
 [metadata]
-content-hash = "9d70c30023b9d850d83753d3d808095772d649ffc771894a2361d7e283fe884e"
-python-versions = "^3.7"
+content-hash = "7061d2b06b875c85fcb63434d6a801e49ab088325a94e4a28bc322bc0b3b102d"
+python-versions = "3.5.7"
 
 [metadata.hashes]
 appnope = ["5b26757dc6f79a3b7dc9fab95359328d5747fcb2409d331ea66d0272b90ab2a0", "8b995ffe925347a2138d7ac0fe77155e4311a0ea6d6da4f5128fe4b3cbe5ed71"]
@@ -225,3 +238,4 @@ pygments = ["71e430bc85c88a430f000ac1d9b331d2407f681d6f6aec95e8bcfbc3df5b0127", 
 six = ["3350809f0555b11f552448330d0b52d5f24c91a322ea4a15ef22629740f3761c", "d16a0141ec1a18405cd4ce8b4613101da75da0e9a7aec5bdd4fa804d0e0eba73"]
 traitlets = ["9c4bd2d267b7153df9152698efb1050a5d84982d3384a37b2c1f7723ba3e7835", "c6cb5e6f57c5a9bdaa40fa71ce7b4af30298fbab9ece9815b5d995ab6217c7d9"]
 wcwidth = ["3df37372226d6e63e1b1e1eda15c594bca98a22d33a23832a90998faa96bc65e", "f4ebe71925af7b40a864553f761ed559b43544f8f71746c2d756c7fe788ade7c"]
+win-unicode-console = ["d4142d4d56d46f449d6f00536a73625a871cba040f0bc1a2e305a04578f07d1e"]
