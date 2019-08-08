@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.urlresolvers import reverse
 
 
 class CourseManager(models.Manager):
@@ -9,6 +8,7 @@ class CourseManager(models.Manager):
             models.Q(name__icontains=query) | \
             models.Q(description__icontains=query)
         )
+
 
 class Course(models.Model):
 
