@@ -1,0 +1,53 @@
+{% extends 'base_template.html' %}
+
+
+{% load staticfiles %}
+
+{% block content %}
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                        <h2>SIGN IN & START SHARING</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="breadcrumb_iner text-center">
+                    <div class="breadcrumb_iner_item">
+                      <form class="single_feature" method="post">
+                          {% csrf_token %}
+                          <fieldset>
+                              {{ form.non_field_errors }}
+
+                              {% for field in form %}
+                              <div class="single_feature_part">
+                                <h3>
+                                  {{ field.label_tag }}
+                                  {{ field }}
+                                </h3>
+                                <h4>
+                                  {{ field.errors }}
+                                </h4>
+                              </div>
+                              {% endfor %}
+
+                              <div class="pure-controls">
+                                  <button type="submit" class="button button-contactForm btn_1">Sign in</button>
+                              </div>
+                          </fieldset>
+                          <p>
+                              Don't have an account? <a href="{% url 'accounts:register' %}" title="">Sign up</a> <br />
+                              Forget? <a href="" title="">Create a new password</a> <br />
+                          </p>
+                      </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
