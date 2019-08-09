@@ -27,6 +27,14 @@ Caso queira verificar se está tudo ok, execute:
 
 `python manage.py syncdb`
 
+- Informar ao Django que há alterações nos modelos:
+
+`python manage.py makemigrations nome_app`
+
+- Aplicar as mudanças realizadas ao Database:
+
+`python manage.py migrate`
+
 - Inicialização de um novo app:
 
 `python manage.py startapp nome_app`
